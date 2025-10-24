@@ -65,7 +65,7 @@
         </div>
     </section>
 
-<!--
+
     <section class="favorite-moments">
         <div class="container">
             <h2 class="section-title">Momentos Favoritos</h2>
@@ -75,10 +75,11 @@
                         <div class="placeholder-image">💕</div>
                     </div>
                     <div class="moment-caption">
-                        <h3>Nosso Primeiro Café</h3>
+                        <h3>Nossa Primeira Foto</h3>
                         <p>Onde tudo começou, entre risos e conversas sobre código e vida.</p>
                     </div>
                 </div>
+                <!--
                 <div class="moment-card">
                     <div class="moment-image">
                         <div class="placeholder-image">🌅</div>
@@ -97,10 +98,11 @@
                         <p>Nossas sessões de trabalho em equipe são as mais produtivas e divertidas.</p>
                     </div>
                 </div>
+            -->
             </div>
         </div>
     </section>
--->
+
     <section class="my-feelings">
         <div class="container">
             <div class="feelings-content">
@@ -164,6 +166,18 @@
             <p>Feito com amor por <span class="author-name">Ryan</span> ❤️</p>
         </div>
     </footer>
+
+    <!-- Modal para exibir fotos dos momentos -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Foto do momento">
+            <div class="modal-caption">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
 
     <script src="index.js"></script>
 </body>
