@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
     animateNumbers();
     createFloatingParticles();
     addRevealAnimation();
-    initializePhotoModal();
     
     setTimeout(() => {
         handleScrollEffects();
@@ -250,65 +249,3 @@ confettiStyle.textContent = `
 document.head.appendChild(confettiStyle);
 
 addConfettiEffect();
-
-
-function initializePhotoModal() {
-    const modal = document.getElementById('photoModal');
-    const modalImage = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-    const closeBtn = document.querySelector('.close');
-    
-
-    const momentsData = {
-        'Nossa Primeira Foto': {
-            image: 'assets/first-photo.jpg',
-            title: 'Nossa Primeira Foto',
-            description: 'Onde tudo começou, entre risos e conversas sobre código e vida.'
-        },
-    };
-    
-
-    function openModal(momentTitle) {
-        const momentData = momentsData[momentTitle];
-        if (momentData) {
-            modalImage.src = momentData.image;
-            modalTitle.textContent = momentData.title;
-            modalDescription.textContent = momentData.description;
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; 
-        }
-    }
-    
-
-    function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; 
-    }
-
-    const momentCards = document.querySelectorAll('.moment-card');
-    momentCards.forEach(card => {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', function() {
-            const title = this.querySelector('h3').textContent;
-            openModal(title);
-        });
-    });
-    
-    // Event listeners para fechar o modal
-    closeBtn.addEventListener('click', closeModal);
-    
-    // Fechar modal clicando fora dele
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Fechar modal com tecla ESC
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.style.display === 'block') {
-            closeModal();
-        }
-    });
-}
